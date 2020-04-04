@@ -1,0 +1,1 @@
+include ':app', ':advice', ':base', ':news', ':settings', ':submit', ':web'
