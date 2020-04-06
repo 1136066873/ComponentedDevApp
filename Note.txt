@@ -1,6 +1,17 @@
 
 
-update on
+----------------------------------------------------------------------------------------------------
+
+update on 2020.04.06 16:15
+今天在 Application 中添加Activity 生命周期变化的函数监听，打印日志如下：
+04-06 16:14:40.087 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication is create
+04-06 16:14:40.144 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication - onActivityCreated -> ComponentInfo{com.heguodong.beijing.componenteddevapp/com.heguodong.beijing.componenteddevapp.MainActivity}
+04-06 16:14:40.279 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication - onActivityStarted -> ComponentInfo{com.heguodong.beijing.componenteddevapp/com.heguodong.beijing.componenteddevapp.MainActivity}
+04-06 16:14:40.286 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication - onActivityResumed -> ComponentInfo{com.heguodong.beijing.componenteddevapp/com.heguodong.beijing.componenteddevapp.MainActivity}
+04-06 16:15:08.184 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication - onActivityPaused -> ComponentInfo{com.heguodong.beijing.componenteddevapp/com.heguodong.beijing.componenteddevapp.MainActivity}
+04-06 16:15:08.747 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication - onActivityStopped -> ComponentInfo{com.heguodong.beijing.componenteddevapp/com.heguodong.beijing.componenteddevapp.MainActivity}
+04-06 16:15:08.750 25365-25365/com.heguodong.beijing.componenteddevapp E/heguodong_001: MyApplication - onActivityDestroyed -> ComponentInfo{com.heguodong.beijing.componenteddevapp/com.heguodong.beijing.componenteddevapp.MainActivity}
+
 
 
 ----------------------------------------------------------------------------------------------------
