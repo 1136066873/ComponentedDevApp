@@ -1,6 +1,7 @@
 package com.heguodong.beijing.componenteddevapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,12 +31,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.tv_info:
                 //just test
-                justTest(this);
+                //justTest001(this);
+
+                //just test
+                justTest002(this);
                 break;
         }
     }
 
-    private void justTest(Context context) {
+    private void justTest002(Context context) {
+        context.startActivity(new Intent(context,SecondActivity.class));
+    }
+
+    private void justTest001(Context context) {
         //测试
         Advice.test();
         News.test();
