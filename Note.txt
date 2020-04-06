@@ -1,4 +1,20 @@
 
+----------------------------------------------------------------------------------------------------
+update on 2020.04.06 16:49
+遇到：
+Error:Execution failed for task ':app:processDebugManifest'.
+> Manifest merger failed : Attribute application@name value=(com.heguodong.beijing.componenteddevapp.MyApplication) from AndroidManifest.xml:7:9-38
+  	is also present at [:advice] AndroidManifest.xml:11:18-79 value=(com.heguodong.beijing.advice.AdviceApplication).
+  	Suggestion: add 'tools:replace="android:name"' to <application> element at AndroidManifest.xml:6:5-21:19 to override.
+
+  	时，问题多半是多个依赖 module 中，声明了好几个 Application ，导致 Manifest 在 merger Application 的时候 failed。
+  	处理：
+  	1.如果功能 Module 有自定义 Application ，主 Module 中没有自定义 Application，这时会自动引用功能 Module 中的自定义 Application。
+  	2.如果功能 Module 没有自定义 Application ，主 Module 中有自定义 Application，这时会自动引用主 Module 中的自定义 Application。
+  	3.如果多个功能 Module 有多个自定义 Application ，则需要解决冲突，每个功能 Module 中都需要加上 tools:replace="android:name"，问题修改
+  	完成之后，Application 最终会载入后编译的 Module 的 Application。
+  	4.如果主 Module 中有自定义 Application，其他功能 Module 也有自定义 Application，在主 Module 中添加 tools:replace="android:name" 之后，
+  	会发现最后编译的主 Module 的 Application 在 AndroidManifest 中。
 
 ----------------------------------------------------------------------------------------------------
 
